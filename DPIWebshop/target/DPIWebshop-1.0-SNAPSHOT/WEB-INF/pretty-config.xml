@@ -1,0 +1,21 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+    <url-mapping id="index">
+        <pattern value="/#{webshopname}" />
+        <view-id value="/webshop/index.xhtml?webshop=#{webshopname}" />
+    </url-mapping>
+
+    <url-mapping id="products">
+        <pattern value="/#{webshopname}/products/#{catid}" />
+        <view-id value="/webshop/products.xhtml?catid=#{catid}" />
+    </url-mapping>
+
+    <url-mapping id="product">
+        <pattern value="/#{webshopname}/products/#{catid}/#{productid}" />
+        <view-id value="/webshop/productdetail.xhtml?productid=#{productid}" />
+    </url-mapping>
+
+</pretty-config>
