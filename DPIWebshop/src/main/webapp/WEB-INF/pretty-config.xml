@@ -4,18 +4,23 @@
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
     <url-mapping id="index">
-        <pattern value="/#{webshopname}" />
-        <view-id value="/webshop/index.xhtml?webshop=#{webshopname}" />
+        <pattern value="/shop/#{webshopname}" />
+        <view-id value="/webshop/index.xhtml?webshopname=#{webshopname}" />
     </url-mapping>
 
     <url-mapping id="products">
-        <pattern value="/#{webshopname}/products/#{catid}" />
-        <view-id value="/webshop/products.xhtml?catid=#{catid}" />
+        <pattern value="/shop/#{webshopname}/category/#{catid}" />
+        <view-id value="/webshop/products.xhtml?webshop=#{webshopname}&amp;catid=#{catid}" />
     </url-mapping>
 
     <url-mapping id="product">
-        <pattern value="/#{webshopname}/products/#{catid}/#{productid}" />
-        <view-id value="/webshop/productdetail.xhtml?productid=#{productid}" />
+        <pattern value="/shop/#{webshopname}/category/#{catid}/product/#{productid}" />
+        <view-id value="/webshop/productdetail.xhtml?webshop=#{webshopname}&amp;catid=#{catid}&amp;productid=#{productid}" />
+    </url-mapping>
+
+    <url-mapping id="add">
+        <pattern value="/shop/#{webshopname}/add" />
+        <view-id value="/webshop/add.xhtml?webshop=#{webshopname}" />
     </url-mapping>
 
 </pretty-config>

@@ -5,7 +5,34 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <ui:include src="/WEB-INF/include.xhtml"/>
+</head>
 <f:view>
-    <h:outputLabel value="Hello, #{param.catid}"/>
+    <h2 class="errormessage text-center">#{webshopBean.errorMessage}</h2>
+
+    <div class="logo-row">
+        <a href="#{request.getContextPath()}/shop/#{webshopBean.webshop.name}">
+            <img class="img-logo" src="#{webshopBean.webshop.imageUrl}" alt="#{webshopBean.webshop.name} logo"/>
+        </a>
+    </div>
+    <div class="row row-with-padding">
+        <h:outputText value="No products found in category: #{webshopBean.currentCategory.name}"
+                      rendered="#{empty webshopBean.currentCategory.products}"/>
+        <ui:repeat value="#{webshopBean.currentCategory.products}" var="product">
+            <div class="col-xs-6 col-md-3 col">
+                <a href="#{request.getContextPath()}/shop/#{webshopBean.webshop.name}/category/#{webshopBean.currentCategory.id}/product/#{product.id}"
+                   class="hoverlink" style="display: block">
+                    <div class="thumbnail">
+                        <img class="thumbImage" src="#{product.imageUrl}" alt="category image"/>
+                        <div class="caption">
+                            <h4 class="thumbHeading">#{product.name}</h4>
+                            <p class="thumbContent">#{product.description}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </ui:repeat>
+    </div>
 </f:view>
 </html>

@@ -5,6 +5,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="DPIWebshop" />
+          <element id="jpa-descriptors" facet="DPIWebshop/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.ocpsoft.rewrite:rewrite-servlet:2.0.12.Final" />

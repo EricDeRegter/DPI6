@@ -1,0 +1,69 @@
+.col {
+    margin-bottom: 20px;
+    height: 300px;
+}
+
+.errormessage {
+    color: red;
+}
+
+.hoverlink:hover {
+    border: 3px solid #2D75DF;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.logo-row{
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.img-logo {
+    height: 100%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;;
+}
+
+.row-with-padding{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sucessmessage {
+    color: green;
+}
+
+.thumbnail {
+    margin-bottom: 0px; !important;
+    max-height: 300px;
+}
+
+.thumbImage {
+    max-height: 170px; !important;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+}
+
+.thumbHeading {
+    max-height: 38px;
+    display:block;
+    text-overflow: "…";
+    overflow:hidden;
+}
+
+.thumbContent {
+    max-height: 60px;
+    display:block;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+
+.productDetailCol {
+    width: 95%;
+}
+
+
+

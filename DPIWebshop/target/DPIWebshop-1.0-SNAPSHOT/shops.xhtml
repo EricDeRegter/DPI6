@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <ui:include src="/WEB-INF/include.xhtml"/>
+</head>
+<f:view>
+    <h2 class="errormessage text-center">#{comparatorBean.errorMessage}</h2>
+
+    <div class="row row-with-padding">
+        <h:outputText value="No webshops found" rendered="#{empty comparatorBean.webshops}"/>
+        <ui:repeat value="#{comparatorBean.webshops}" var="webshop">
+            <div class="col-xs-6 col-md-3 col">
+                <a href="#{request.getContextPath()}/shop/#{webshop.name}" class="hoverlink" style="display: block">
+                    <div class="thumbnail">
+                        <img class="thumbImage" src="#{webshop.imageUrl}" alt="webshop image"/>
+                        <div class="caption">
+                            <h3>#{webshop.name}</h3>
+                            <p>#{webshop.description}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </ui:repeat>
+    </div>
+</f:view>
+</html>
